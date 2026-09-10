@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="id">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Presentasi interaktif 3D mata kuliah Komputer dan Masyarakat.">
+	<title>Komputer dan Masyarakat | Presentasi 3D</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="noise" aria-hidden="true"></div>
+	<canvas id="scene" aria-hidden="true"></canvas>
+	<div class="grid-overlay" aria-hidden="true"></div>
+
+	<header class="topbar">
+		<a class="brand" href="#s1" aria-label="Kembali ke sampul">
+			<span class="brand-mark">K<span>×</span></span>
+			<span>Komputer<br><em>&amp; Masyarakat</em></span>
+		</a>
+		<div class="top-meta"><span class="live-dot"></span> PRESENTASI INTERAKTIF <span class="meta-rule"></span> SOSIO-TEKNOLOGI</div>
+		<button class="menu-button" type="button" aria-label="Buka daftar bagian" aria-expanded="false"><span></span><span></span></button>
+	</header>
+
+	<aside class="side-nav" aria-label="Navigasi bagian">
+		<div class="side-label">NAVIGASI</div>
+		<nav id="section-nav"></nav>
+	</aside>
+
+	<main id="deck">
+		<section class="slide hero" id="s1" data-title="Sampul">
+			<div class="hero-copy reveal"><p class="eyebrow">MATA KULIAH · KOMAS / 2026</p><h1>KOMPUTER<br><span>DAN</span> MASYARAKAT</h1><p class="lead">Peran teknologi komputer dalam membentuk kehidupan modern.</p><div class="hero-detail"><span>KELOMPOK 01</span><span class="detail-line"></span><span>Nama anggota / Universitas</span></div></div>
+			<div class="hero-orbit" aria-label="Visualisasi jaringan digital 3D"><span class="orbit-caption">01 <i>/</i> 16<br><b>THE DIGITAL<br>WORLD</b></span></div>
+			<div class="scroll-hint">GULIR UNTUK MENJELAJAHI <span>↓</span></div>
+		</section>
+
+		<section class="slide" id="s2" data-title="Pengertian komputer">
+			<div class="section-heading reveal"><div><p class="eyebrow">01 / LANDASAN</p><h2>Pengertian <em>Komputer</em></h2></div><p class="heading-note">Sistem yang mengubah data menjadi informasi bermakna.</p></div>
+			<div class="split-layout"><div class="definition-panel reveal"><span class="big-index">01</span><p>Komputer adalah perangkat elektronik yang menerima <strong>data</strong>, memprosesnya dengan instruksi, menyimpan hasilnya, lalu menyajikan <strong>informasi</strong> yang dapat digunakan manusia.</p><div class="formula">INPUT <i>→</i> PROCESS <i>→</i> OUTPUT <i>→</i> STORAGE</div></div><div class="system-diagram reveal"><div class="diagram-node node-input">INPUT<small>keyboard · sensor · kamera</small></div><div class="diagram-line"></div><div class="diagram-node node-process">PROCESS<small>CPU · algoritma · AI</small></div><div class="diagram-line"></div><div class="diagram-node node-output">OUTPUT<small>layar · suara · aksi</small></div><div class="storage-chip">↗ STORAGE / CLOUD</div></div></div>
+			<div class="tag-row reveal"><span>laptop</span><span>smartphone</span><span>server</span><span>IoT</span><span>superkomputer</span></div>
+		</section>
+
+		<section class="slide" id="s3" data-title="Pengertian masyarakat">
+			<div class="section-heading reveal"><div><p class="eyebrow">02 / LANDASAN</p><h2>Pengertian <em>Masyarakat</em></h2></div><p class="heading-note">Manusia terhubung oleh nilai, norma, dan tujuan bersama.</p></div>
+			<div class="society-grid"><div class="society-copy reveal"><p>Masyarakat adalah sekumpulan manusia yang hidup bersama, berinteraksi, membangun identitas, serta menciptakan aturan dan kebudayaan.</p><div class="quote">“Teknologi tidak hadir di ruang kosong. Ia tumbuh di tengah kebutuhan, nilai, dan keputusan manusia.”</div></div><div class="network-visual reveal"><div class="human h1">●<small>INDIVIDU</small></div><div class="human h2">●<small>KOMUNITAS</small></div><div class="human h3">●<small>LEMBAGA</small></div><div class="human h4">●<small>BUDAYA</small></div><div class="network-core">MASYARAKAT<br><small>INTERAKSI DIGITAL</small></div></div></div>
+			<div class="three-columns reveal"><div><b>Interaksi</b><span>hubungan sosial antarindividu</span></div><div><b>Adopsi</b><span>penerimaan teknologi baru</span></div><div><b>Masyarakat digital</b><span>aktivitas sosial dimediasi data</span></div></div>
+		</section>
+
+		<section class="slide" id="s4" data-title="Hubungan">
+			<div class="section-heading reveal"><div><p class="eyebrow">03 / LANDASAN</p><h2>Hubungan Komputer<br><em>&amp; Masyarakat</em></h2></div><p class="heading-note">Sebuah hubungan dua arah: teknologi membentuk perilaku, masyarakat mengarahkan inovasi.</p></div>
+			<div class="hub-layout"><div class="hub-core reveal"><div class="core-ring"></div><strong>COMPUTER<br>× SOCIETY</strong><span>mutual shaping</span></div><div class="hub-list reveal"><article><b>01</b><strong>Komunikasi</strong><p>Pesan instan dan konferensi video menghapus jarak.</p></article><article><b>02</b><strong>Kerja & bisnis</strong><p>Kolaborasi, otomasi, dan ekonomi platform mengubah profesi.</p></article><article><b>03</b><strong>Pendidikan</strong><p>Akses pengetahuan menjadi lebih terbuka dan personal.</p></article><article><b>04</b><strong>Publik</strong><p>Pemerintahan dan layanan sosial bergerak ke kanal digital.</p></article></div></div>
+		</section>
+
+		<section class="slide" id="s5" data-title="Sejarah komputer">
+			<div class="section-heading reveal"><div><p class="eyebrow">04 / EVOLUSI</p><h2>Lima Generasi <em>Komputer</em></h2></div><p class="heading-note">Dari tabung vakum menuju kecerdasan yang membantu manusia.</p></div>
+			<div class="timeline reveal" role="list"><article class="era active" role="listitem"><span>01</span><b>1940–1956</b><h3>Tabung Vakum</h3><p>Ukuran besar, panas, boros energi. Contoh: ENIAC.</p><i>Awal komputasi elektronik</i></article><article class="era" role="listitem"><span>02</span><b>1956–1963</b><h3>Transistor</h3><p>Lebih kecil, cepat, dan andal daripada tabung vakum.</p><i>Komputer mulai komersial</i></article><article class="era" role="listitem"><span>03</span><b>1964–1971</b><h3>IC</h3><p>Ribuan komponen dalam satu chip meningkatkan efisiensi.</p><i>Era mainframe</i></article><article class="era" role="listitem"><span>04</span><b>1971–sekarang</b><h3>Mikroprosesor</h3><p>CPU dalam satu chip melahirkan PC dan perangkat bergerak.</p><i>Komputer personal</i></article><article class="era" role="listitem"><span>05</span><b>Sekarang →</b><h3>AI</h3><p>Mesin belajar dari data, mengenali pola, dan membantu keputusan.</p><i>Komputasi adaptif</i></article></div>
+			<div class="timeline-foot"><span>Kompleksitas ↑</span><span>Ukuran ↓</span><span>Dampak sosial ↑</span></div>
+		</section>
+
+		<section class="slide" id="s6" data-title="Masyarakat informasi">
+			<div class="section-heading reveal"><div><p class="eyebrow">05 / EKOSISTEM</p><h2>Masyarakat <em>Informasi</em></h2></div><p class="heading-note">Informasi menjadi sumber daya strategis seperti tanah, modal, dan energi.</p></div>
+			<div class="info-grid"><div class="info-statement reveal"><span class="giant-word">DATA</span><p>Nilai ekonomi dan sosial lahir ketika data dikumpulkan, diolah, diinterpretasikan, lalu digunakan secara bertanggung jawab.</p></div><div class="info-points reveal"><div><b>01</b><strong>Serba terhubung</strong><span>Komunikasi berlangsung real-time lintas wilayah.</span></div><div><b>02</b><strong>Berbasis pengetahuan</strong><span>Keputusan didukung bukti dan analitik.</span></div><div><b>03</b><strong>Transformasi digital</strong><span>Proses lama dirancang ulang dengan teknologi.</span></div></div></div><div class="signal-line reveal"><span>DATA</span><i></i><span>INFORMASI</span><i></i><span>PENGETAHUAN</span><i></i><span>KEPUTUSAN</span></div>
+		</section>
+
+		<section class="slide" id="s7" data-title="Pendidikan">
+			<div class="section-heading reveal"><div><p class="eyebrow">06 / DOMAIN</p><h2>Komputer dalam <em>Pendidikan</em></h2></div><p class="heading-note">Belajar menjadi lebih fleksibel, personal, dan terukur.</p></div>
+			<div class="domain-layout"><div class="domain-intro reveal"><div class="edu-icon">◫</div><p>Platform digital memperluas ruang kelas, tetapi kualitas belajar tetap bergantung pada desain pedagogis dan pendampingan manusia.</p><div class="metric"><span>LEARNING STACK</span><b>LMS · UJIAN ONLINE · PERPUSTAKAAN · VIDEO · AI</b></div></div><div class="card-matrix reveal"><article><b>E-learning</b><span>Akses materi kapan saja.</span></article><article><b>AI tutor</b><span>Umpan balik adaptif.</span></article><article><b>Laboratorium virtual</b><span>Simulasi aman dan hemat.</span></article><article class="caution"><b>Tantangan</b><span>Literasi, akses, dan distraksi.</span></article></div></div>
+		</section>
+
+		<section class="slide" id="s8" data-title="Bisnis">
+			<div class="section-heading reveal"><div><p class="eyebrow">07 / DOMAIN</p><h2>Komputer dalam <em>Bisnis</em></h2></div><p class="heading-note">Data dan otomasi membuat organisasi lebih responsif terhadap kebutuhan pelanggan.</p></div>
+			<div class="business-board reveal"><div class="board-axis y">NILAI BISNIS</div><div class="board-center"><span>ERP</span><span>CRM</span><span>BI</span><strong>OPERASI<br>DIGITAL</strong></div><div class="board-card bc1"><b>E-commerce</b><span>pasar 24/7</span></div><div class="board-card bc2"><b>Cloud</b><span>skala fleksibel</span></div><div class="board-card bc3"><b>Pembayaran</b><span>transaksi instan</span></div><div class="board-card bc4"><b>Otomasi</b><span>proses konsisten</span></div></div><div class="outcome-row reveal"><span>EFISIENSI</span><span>PRODUKTIVITAS</span><span>PELAYANAN</span><span>KEPUTUSAN</span></div>
+		</section>
+
+		<section class="slide" id="s9" data-title="Kesehatan">
+			<div class="section-heading reveal"><div><p class="eyebrow">08 / DOMAIN</p><h2>Komputer dalam <em>Kesehatan</em></h2></div><p class="heading-note">Teknologi mempercepat layanan, namun keputusan klinis tetap membutuhkan profesional.</p></div>
+			<div class="health-layout"><div class="health-screen reveal"><div class="pulse"></div><span>HEALTH DATA / LIVE</span><strong>98.4%</strong><small>akurasi pemantauan</small><div class="scan-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="health-list reveal"><article><b>Rekam medis elektronik</b><span>Riwayat pasien terintegrasi dan mudah ditelusuri.</span></article><article><b>Telemedicine & wearable</b><span>Pemantauan jarak jauh dan konsultasi lebih terjangkau.</span></article><article><b>Imaging & AI</b><span>Membantu membaca pola pada citra medis, bukan menggantikan dokter.</span></article><div class="risk-note"><strong>Manfaat ↗</strong> cepat · akurat · terintegrasi <em>Risiko ↘</em> privasi · bias · ketergantungan sistem</div></div></div>
+		</section>
+
+		<section class="slide" id="s10" data-title="Pemerintahan">
+			<div class="section-heading reveal"><div><p class="eyebrow">09 / DOMAIN</p><h2>Komputer dalam <em>Pemerintahan</em></h2></div><p class="heading-note">E-government mendekatkan layanan publik kepada warga.</p></div>
+			<div class="gov-layout"><div class="gov-map reveal"><span class="map-node n1"></span><span class="map-node n2"></span><span class="map-node n3"></span><span class="map-node n4"></span><div class="gov-core">PUBLIC<br><b>DATA</b></div></div><div class="gov-content reveal"><p>Layanan digital yang baik menyederhanakan proses tanpa mengorbankan hak warga.</p><div class="benefit-list"><span><b>+</b> efisiensi administrasi</span><span><b>+</b> transparansi anggaran</span><span><b>+</b> akses layanan 24/7</span></div><div class="challenge"><small>TITIK WASPADA</small><strong>Keamanan siber · privasi · kesenjangan digital</strong></div></div></div>
+		</section>
+
+		<section class="slide" id="s11" data-title="Dampak positif">
+			<div class="section-heading reveal"><div><p class="eyebrow">10 / DAMPAK</p><h2>Dampak <em>Positif</em></h2></div><p class="heading-note">Ketika dirancang inklusif, teknologi memperluas kemampuan manusia.</p></div>
+			<div class="positive-grid reveal"><article><span>01</span><b>Koneksi lebih cepat</b><p>Orang, ide, dan peluang bertemu melampaui batas geografis.</p></article><article><span>02</span><b>Akses pengetahuan</b><p>Sumber belajar terbuka mendukung pembelajaran sepanjang hayat.</p></article><article><span>03</span><b>Produktivitas</b><p>Otomasi mengurangi pekerjaan repetitif dan kesalahan manusia.</p></article><article><span>04</span><b>Peluang ekonomi</b><p>Platform digital membuka profesi dan pasar baru.</p></article><article><span>05</span><b>Inovasi</b><p>Eksperimen dan kolaborasi dapat dilakukan lebih cepat.</p></article><article><span>06</span><b>Global connectivity</b><p>Komunitas lintas budaya tumbuh dari jaringan digital.</p></article></div>
+		</section>
+
+		<section class="slide" id="s12" data-title="Dampak negatif">
+			<div class="section-heading reveal"><div><p class="eyebrow">11 / DAMPAK</p><h2>Dampak <em>Negatif</em></h2></div><p class="heading-note">Kemajuan teknis selalu membawa pertanyaan tentang biaya sosialnya.</p></div>
+			<div class="balance-layout"><div class="balance-scale reveal"><div class="scale-left">RISIKO</div><div class="scale-beam"></div><div class="scale-right">MANFAAT</div><div class="scale-base"></div></div><div class="risk-grid reveal"><div><b>Cybercrime</b><span>Serangan dan penipuan digital</span></div><div><b>Misinformasi</b><span>Informasi salah menyebar cepat</span></div><div><b>Privasi</b><span>Jejak data sulit dikendalikan</span></div><div><b>Otomasi kerja</b><span>Peran kerja perlu ditransformasi</span></div><div><b>Kecanduan</b><span>Atensi dan relasi terganggu</span></div><div><b>Kesenjangan</b><span>Akses belum merata</span></div></div></div>
+		</section>
+
+		<section class="slide" id="s13" data-title="Etika komputer">
+			<div class="section-heading reveal"><div><p class="eyebrow">12 / TANGGUNG JAWAB</p><h2>Etika <em>Komputer</em></h2></div><p class="heading-note">Pertanyaan penting bukan hanya “bisa dilakukan?”, tetapi “patut dilakukan?”.</p></div>
+			<div class="ethics-layout"><div class="ethics-seal reveal"><div>ETHICS<br><span>BY DESIGN</span></div><i></i></div><div class="ethics-list reveal"><article><b>Privasi</b><span>Kumpulkan data seperlunya dan jelaskan penggunaannya.</span></article><article><b>Integritas</b><span>Hormati hak cipta, lisensi, dan hindari plagiarisme.</span></article><article><b>AI bertanggung jawab</b><span>Periksa bias, sumber, dan tetap libatkan penilaian manusia.</span></article><article><b>Komunikasi digital</b><span>Berbicara dengan empati, bukti, dan menghormati pengguna lain.</span></article></div></div>
+		</section>
+
+		<section class="slide" id="s14" data-title="Keamanan informasi">
+			<div class="section-heading reveal"><div><p class="eyebrow">13 / TANGGUNG JAWAB</p><h2>Keamanan <em>Informasi</em></h2></div><p class="heading-note">Pertahanan terbaik adalah kombinasi teknologi, proses, dan kesadaran manusia.</p></div>
+			<div class="security-layout"><div class="security-radar reveal"><div class="radar-ring r1"></div><div class="radar-ring r2"></div><div class="radar-sweep"></div><strong>SECURE<br>THE DATA</strong></div><div class="security-content reveal"><div class="threats"><span>malware</span><span>phishing</span><span>ransomware</span><span>social engineering</span><span>data breach</span></div><h3>7 lapisan perlindungan</h3><div class="protection-list"><span><b>01</b> kata sandi kuat + MFA</span><span><b>02</b> backup dan update berkala</span><span><b>03</b> antivirus, firewall, dan waspada</span></div></div></div>
+		</section>
+
+		<section class="slide" id="s15" data-title="HKI & cybercrime">
+			<div class="section-heading reveal"><div><p class="eyebrow">14 / HUKUM DIGITAL</p><h2>HKI <em>vs</em> Cybercrime</h2></div><p class="heading-note">Kreativitas perlu dilindungi; ruang digital perlu dipertanggungjawabkan.</p></div>
+			<div class="duo-layout reveal"><div class="duo-panel ip"><div class="duo-head"><span>A</span><h3>Hak Kekayaan Intelektual</h3></div><p>Hak eksklusif atas karya dan inovasi yang memberi penghargaan kepada pencipta.</p><div class="duo-items"><span>Hak cipta</span><span>Paten</span><span>Merek</span><span>Lisensi software</span><span>Open source</span></div></div><div class="duo-panel crime"><div class="duo-head"><span>B</span><h3>Cybercrime</h3></div><p>Tindakan melawan hukum yang memanfaatkan sistem atau jaringan komputer.</p><div class="duo-items"><span>Hacking</span><span>Phishing</span><span>Pencurian identitas</span><span>Pencurian data</span><span>Serangan website</span></div></div></div><div class="legal-line reveal"><span>BUAT</span><i></i><span>GUNAKAN</span><i></i><span>LINDUNGI</span></div>
+		</section>
+
+		<section class="slide final-slide" id="s16" data-title="Kesimpulan">
+			<div class="final-copy reveal"><p class="eyebrow">16 / PENUTUP</p><h2>Teknologi adalah alat.<br><em>Manusia menentukan arahnya.</em></h2><p>Komputer memberi kita kemampuan yang luar biasa. Arah akhirnya ditentukan oleh pilihan manusia: digunakan secara <strong>bertanggung jawab, etis, aman,</strong> dan <strong>bijaksana.</strong></p><div class="final-tags"><span>RESPONSIBLE</span><span>ETHICAL</span><span>SECURE</span><span>WISE</span></div></div><div class="final-signal"><div class="final-core">∞</div><span>THANK YOU<br><small>END OF PRESENTATION</small></span></div></section>
+	</main>
+
+	<footer class="controls"><button id="prev" type="button" aria-label="Bagian sebelumnya">←</button><div class="counter"><span id="current">01</span><i>/</i>16</div><div class="progress"><span id="progress-fill"></span></div><button id="next" type="button" aria-label="Bagian berikutnya">→</button><span class="key-hint">↑ ↓ / PGUP PGDN</span></footer>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script> -->
+	<script src="three.min.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
