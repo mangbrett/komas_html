@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eksplorasi Komponen PC 3D Interaktif</title>
+  <meta name="description" content="Visualisasi 3D/4D interaktif komponen komputer PC dan pembagiannya dengan animasi perakitan dan penjelasan detail.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <script type="module" crossorigin src="/assets/index-C10mhscE.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DVUX6OhM.css">
+</head>
+<body>
+  <!-- 3D Canvas Canvas Container -->
+  <div id="canvas-container"></div>
+
+  <!-- Ambient Cyber Scanlines / Vignette Effect -->
+  <div class="cyber-vignette"></div>
+
+  <!-- Loading Screen Overlay -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loader-content">
+      <div class="loader-scanner">
+        <div class="scanner-ring outer"></div>
+        <div class="scanner-ring inner"></div>
+        <div class="scanner-core">
+          <span class="core-icon">🖥️</span>
+        </div>
+      </div>
+
+      <div class="loader-info">
+        <h2 class="loader-title">MEMUAT 3D HARDWARE RIG</h2>
+        <p class="loader-subtitle" id="loader-status-text">Menginisialisasi asset 3D personal_computer.glb...</p>
+        
+        <div class="progress-bar-track">
+          <div id="progress-bar-fill" class="progress-bar-fill"></div>
+        </div>
+        
+        <div class="progress-meta">
+          <span id="progress-percent" class="progress-percent">0%</span>
+          <span id="progress-bytes" class="progress-bytes">0 MB / 75 MB</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Top Glass Navigation Bar -->
+  <header class="top-nav">
+    <div class="nav-left">
+      <div class="brand-badge">
+        <span class="brand-dot"></span>
+        <span class="brand-name">PC-HARDWARE 3D</span>
+      </div>
+      <div class="status-indicator" id="system-status">
+        <span class="status-dot"></span>
+        <span class="status-text" id="status-text">MODE: PC TERAKIT (IDLE)</span>
+      </div>
+    </div>
+
+    <div class="nav-center">
+      <div class="hint-banner" id="hint-banner">
+        <span class="hint-icon">💡</span>
+        <span class="hint-text">Klik komponen apa pun pada PC untuk mengeluarkannya & melihat fungsi lengkap</span>
+      </div>
+    </div>
+
+    <div class="nav-right">
+      <button id="btn-reset" class="nav-btn primary" title="Kembalikan semua komponen ke posisi terakit">
+        <span class="btn-icon">↺</span>
+        <span class="btn-label">Rakit Penuh</span>
+      </button>
+
+      <button id="btn-autorotate" class="nav-btn" title="Aktifkan / nonaktifkan putar 360° otomatis">
+        <span class="btn-icon">🔄</span>
+        <span class="btn-label">Putar 360°</span>
+      </button>
+
+      <button id="btn-sound" class="nav-btn" title="Toggle Efek Suara">
+        <span class="btn-icon" id="sound-icon">🔊</span>
+        <span class="btn-label">Audio</span>
+      </button>
+
+      <button id="btn-help" class="nav-btn icon-only" title="Panduan Kontrol">
+        <span class="btn-icon">❓</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Left Quick Component Sidebar / Dock -->
+  <aside class="quick-dock" id="quick-dock">
+    <div class="dock-header">
+      <span class="dock-title">DAFTAR KOMPONEN</span>
+      <span class="dock-counter" id="dock-counter">8 Bagian</span>
+    </div>
+    <div class="dock-list" id="dock-list">
+      <!-- Generated via JS -->
+    </div>
+  </aside>
+
+  <!-- Dynamic Hover 3D Tooltip -->
+  <div id="hover-tooltip" class="hover-tooltip">
+    <div class="tooltip-badge" id="tooltip-category">KOMPONEN</div>
+    <div class="tooltip-title" id="tooltip-name">Nama Bagian</div>
+    <div class="tooltip-hint">Klik untuk mengeluarkan dari casing ➔</div>
+  </div>
+
+  <!-- Corner Static Popup (Requirement 4: Popup Statik di Pojok dengan Running Text) -->
+  <div id="corner-popup" class="corner-popup hidden">
+    <div class="popup-glass-card">
+      <!-- Glow & border effects -->
+      <div class="card-glow-accent"></div>
+      
+      <!-- Card Header -->
+      <div class="popup-header">
+        <div class="header-main">
+          <div class="popup-badge" id="popup-badge">
+            <span class="badge-pulse"></span>
+            <span id="popup-category-text">PEMROSESAN GRAFIS</span>
+          </div>
+          <h2 class="popup-title" id="popup-title">Kartu Grafis (GPU)</h2>
+          <div class="popup-subtitle" id="popup-subtitle">NVIDIA GeForce GTX 780</div>
+        </div>
+        <button id="popup-close-btn" class="popup-close" title="Kembalikan komponen ke casing">
+          ✕
+        </button>
+      </div>
+
+      <!-- Card Body: Running Text & Information -->
+      <div class="popup-body">
+        <div class="running-text-header">
+          <div class="terminal-status">
+            <span class="terminal-dot"></span>
+            <span>DESKRIPSI & SPESIFIKASI BAGIAN</span>
+          </div>
+          <button id="btn-skip-typing" class="skip-btn" title="Tampilkan teks lengkap seketika">
+            Tampilkan Penuh
+          </button>
+        </div>
+
+        <!-- Running Text Output Area -->
+        <div class="running-text-container" id="running-text-container">
+          <p id="running-text-content" class="running-text-content"></p>
+          <span class="typewriter-cursor">▌</span>
+        </div>
+
+        <!-- Specifications Grid -->
+        <div class="specs-section">
+          <div class="specs-title">SPESIFIKASI TEKNIS</div>
+          <div class="specs-grid" id="specs-grid">
+            <!-- Filled dynamically -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="popup-footer">
+        <div class="footer-nav">
+          <button id="btn-prev-part" class="footer-btn ghost" title="Komponen sebelumnya">
+            ◀ Sebelumnya
+          </button>
+          <button id="btn-next-part" class="footer-btn ghost" title="Komponen berikutnya">
+            Berikutnya ▶
+          </button>
+        </div>
+        <button id="btn-dock-retract" class="footer-btn primary">
+          ↺ Pasang Kembali ke Casing
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Help & Guide Modal -->
+  <div id="help-modal" class="modal-overlay hidden">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>PANDUAN INTERAKSI 3D</h3>
+        <button id="modal-close-btn" class="modal-close">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="guide-item">
+          <div class="guide-key">🖱️ Klik Kiri & Geser</div>
+          <div class="guide-desc">Putar PC 360° secara bebas ke seluruh sudut.</div>
+        </div>
+        <div class="guide-item">
+          <div class="guide-key">🔍 Scroll Mouse / Pinch</div>
+          <div class="guide-desc">Perbesar (zoom in) atau perkecil (zoom out) kamera.</div>
+        </div>
+        <div class="guide-item">
+          <div class="guide-key">👆 Klik Pada Komponen</div>
+          <div class="guide-desc">Komponen akan otomatis keluar dari casing dan kamera berfokus ke komponen tersebut.</div>
+        </div>
+        <div class="guide-item">
+          <div class="guide-key">📜 Running Text Pojok</div>
+          <div class="guide-desc">Penjelasan komprehensif mengenai fungsi & spesifikasi komponen akan muncul di pojok kanan bawah.</div>
+        </div>
+        <div class="guide-item">
+          <div class="guide-key">↺ Tombol Rakit Penuh</div>
+          <div class="guide-desc">Kembalikan komponen yang keluar ke dalam posisi semula dan reset posisi kamera.</div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="modal-ok-btn" class="nav-btn primary">Mengerti & Lanjutkan</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript App -->
+</body>
+</html>
